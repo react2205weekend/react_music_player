@@ -1,4 +1,4 @@
-const Footer = () =>{
+function Footer(){
   return (
     <footer>
       <p>2022 DCODELAB &copy; ALL RIGHTS RESERVED.</p>
