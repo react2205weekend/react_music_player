@@ -10,9 +10,7 @@ function Btns({ sec, num }) {
 	};
 
 	//count state값이 변경될때마다 rotation함수 호출
-	useEffect(() => {
-		if (sec !== null) rotation();
-	}, [count]);
+	useEffect(rotation, [count]);
 
 	return (
 		<nav>
