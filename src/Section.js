@@ -1,3 +1,5 @@
+import Card from './Card';
+
 function Section() {
 	const arr = [
 		'Blizzards',
@@ -13,7 +15,7 @@ function Section() {
 	return (
 		<section>
 			{arr.map((item, idx) => {
-				return <article key={idx}>{item}</article>;
+				return <Card key={idx} item={item} />;
 			})}
 		</section>
 	);
