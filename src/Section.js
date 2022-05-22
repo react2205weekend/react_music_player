@@ -1,5 +1,6 @@
 import Card from './Card';
-import { useState } from 'react';
+import Btns from './Btns';
+import { useRef } from 'react';
 
 function Section() {
 	const arr = [
@@ -12,22 +13,19 @@ function Section() {
 		'Seasonal',
 		'Vespers',
 	];
-	const [count, setCount] = useState(0);
+	//sec라는 변수에 section요소를 참조해서 담음
+	const sec = useRef(null);
 
 	return (
 		<>
-			<section
-				style={{
-					top: '140%',
-					transform: `rotate(${(360 / arr.length) * count}deg)`,
-				}}>
+			<section ref={sec} style={{ top: '140%' }}>
 				{arr.map((item, idx) => {
 					return <Card key={idx} item={item} index={idx} num={arr.length} />;
 				})}
 			</section>
 
-			<a href='#' className='prev' onClick={() => setCount(count - 1)}></a>
-			<a href='#' className='next' onClick={() => setCount(count + 1)}></a>
+			{/* 참조된 객체를 자식 컴포넌트로 전달 */}
+			<Btns sec={sec} num={arr.length} />
 		</>
 	);
 }
