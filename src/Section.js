@@ -13,9 +13,9 @@ function Section() {
 	];
 
 	return (
-		<section>
+		<section style={{ top: '140%' }}>
 			{arr.map((item, idx) => {
-				return <Card key={idx} item={item} />;
+				return <Card key={idx} item={item} index={idx} num={arr.length} />;
 			})}
 		</section>
 	);
